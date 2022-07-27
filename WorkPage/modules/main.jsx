@@ -13,6 +13,8 @@ const rootMain = ReactDOMClient.createRoot(document.querySelector('main'))
 const rootFooter = ReactDOMClient.createRoot(document.querySelector('footer'))
 const rootAnimation = ReactDOMClient.createRoot(document.querySelector('#animation'))
 
+if(!localStorage.notes) localStorage.setItem('notes', JSON.stringify(''))
+
 class Header extends React.Component {
     render() {
         return <div id="header-container">
