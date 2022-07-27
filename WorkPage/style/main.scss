@@ -1,0 +1,16 @@
+@import './partials/animation';
+@import './partials/website';
+@import './partials/todolist';
+@import './partials/notepad';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial'
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}

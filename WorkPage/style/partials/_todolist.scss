@@ -1,0 +1,45 @@
+#appBox div#addTask {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 3% 0;
+}
+
+#appBox div#tasks {
+    margin: 0 auto;
+    margin-top: 3%;
+    height: 75%;
+    width: 75%;
+    background-color: red;
+    display: flex;
+}
+
+#addTask input {
+    border: solid 2px #abf2ff;
+    border-radius: 30px;
+    font-size: 30px;
+    padding: 5px;
+}
+
+#addTask input:focus {
+    outline: none;
+    animation: shake 0.5s infinite;
+    border: 6px double #abf2ff;
+    box-shadow: 0 0 40px #abf2ff;
+}
+
+#addTask button {
+    border: 6px double #abf2ff;
+    border-radius: 30px;
+    background-color: white;
+    margin-left: 1%;
+    padding: 5px;
+    font-size: 30px;
+    color: #abf2ff
+}
+
+#addTask button:hover {
+    animation: shake 0.5s infinite;
+    border: 6px double #abf2ff;
+    box-shadow: 0 0 40px #abf2ff;
+}

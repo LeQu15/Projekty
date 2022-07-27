@@ -1,0 +1,735 @@
+//Header
+header {
+    background-color: lightblue;
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+}
+
+header h1 {
+    font-family: 'Lemon', cursive;
+    color: white;
+    text-shadow: 0 0 6px black;
+    z-index: 1;
+    pointer-events: none;
+}
+
+div.title {
+    display: flex;
+    position: absolute;
+}
+
+header .fa-suitcase {
+    position: absolute;
+    right: -28px;
+    z-index: 0;
+    color: #342211;
+    text-shadow: 0 0 6px black;
+    transform: rotate(45deg);
+}
+
+header>div#header-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header .line:first-of-type {
+    width: 100%;
+    height: 3px;
+    border: 5px double#abf2ff;
+    margin-bottom: auto;
+}
+
+header div.weather {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-shadow: 0 0 2px #000;
+    align-items: center;
+}
+
+
+header .line:last-of-type {
+    width: 100%;
+    height: 3px;
+    border: 5px double#abf2ff;
+    margin-top: auto;
+}
+
+//Main
+main {
+    height: 70%;
+    overflow: hidden;
+}
+
+.container-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
+    overflow: hidden;
+}
+
+.application {
+    flex-basis: 20%;
+    border: 10px double lightblue;
+    box-sizing: border-box;
+    margin: 20px 10px;
+    border-radius: 40px;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 60px lightblue;
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+
+.application .icon {
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 20px;
+    pointer-events: none
+}
+
+.application:hover {
+    animation: shake 0.5s infinite;
+    border: 10px double #abf2ff;
+    box-shadow: 0 0 40px #abf2ff;
+}
+
+//Footer
+footer {
+    background-color: lightblue;
+    width: 100%;
+    height: 10%;
+    overflow: hidden;
+}
+
+footer>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .line:first-of-type {
+    width: 100%;
+    margin-bottom: auto;
+    height: 3px;
+    border: 5px double#abf2ff;
+}
+
+footer .line:last-of-type {
+    width: 100%;
+    margin-top: auto;
+    height: 3px;
+    border: 5px double#abf2ff;
+}
+
+.themes {
+    position: absolute;
+    left: 20px;
+}
+
+#light {
+    background-color: white;
+}
+
+#dark {
+    background-color: rgb(34, 34, 34);
+}
+
+#contrast {
+    background-color: yellow;
+}
+
+footer button {
+    width: 30px;
+    height: 30px;
+    border: 4px solid #abf2ff;
+    border-radius: 300px;
+    margin-right: 10px;
+}
+
+footer a {
+    font-size: 40px;
+    position: absolute;
+    right: 20px;
+    color: black;
+}
+
+//Application screen
+#background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    transition: opacity 0.2s linear;
+    animation: show 0.3s
+}
+
+#application-container {
+    width: 90vw;
+    height: 90vh;
+    background-color: white;
+    position: absolute;
+    left: 5vw;
+    top: 5vh;
+    z-index: 10;
+    border: 6px solid #abf2ff;
+    border-radius: 5%;
+    box-sizing: border-box;
+}
+
+#close {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 6px solid #abf2ff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 11;
+    background: white;
+    border-radius: 300px;
+    font-size: 40px;
+    color: #abf2ff;
+    cursor: pointer;
+}
+
+#application-container h3 {
+    color: #abf2ff;
+    font-size: 30px;
+    height: 30px;
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    border-bottom: 3px solid #abf2ff;
+}
+
+#appBox {
+    height: 100%;
+}
+
+
+
+//Animations
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 100%
+    }
+}
+
+@media (min-width: 320px) and (orientation:portrait) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    header .fa-suitcase {
+        font-size: 40px;
+        right: -18px;
+    }
+
+
+    header div.weather {
+        top: 20px;
+        left: 15px;
+    }
+
+    div.weather img {
+        width: 50%;
+    }
+
+
+    .application {
+        border: 6px double lightblue;
+        margin: 5px 5px;
+        height: 30%;
+        box-shadow: 0 0 40px lightblue;
+        flex-basis: 30%;
+    }
+
+    .application .icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    footer a {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 375px) and (orientation:portrait) {
+    header h1 {
+        font-size: 35px;
+    }
+
+    header .fa-suitcase {
+        font-size: 35px;
+        right: -16px;
+    }
+
+    header div.weather {
+        top: 20px;
+        left: 15px;
+    }
+
+    div.weather img {
+        width: 70%;
+    }
+
+    footer a {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 414px) and (orientation:portrait) {
+    header h1 {
+        font-size: 45px;
+    }
+
+    header .fa-suitcase {
+        font-size: 45px;
+        right: -18px;
+        top: 5px;
+    }
+
+    .application {
+        height: 35%;
+    }
+
+    .application .icon {
+        font-size: 50px;
+    }
+
+    footer a {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 533px) and (orientation:landscape) {
+    header h1 {
+        font-size: 35px;
+    }
+
+    header .fa-suitcase {
+        font-size: 35px;
+        right: -18px;
+        top: 5px;
+    }
+
+    header div.weather {
+        top: 5px;
+        right: 15px;
+    }
+
+    div.weather p {
+        font-size: 12px;
+    }
+
+    div.weather img {
+        width: 60%;
+    }
+
+    .application {
+        height: 40%;
+        margin: 10px 10px;
+    }
+
+    .application .icon {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    footer button {
+        width: 25px;
+        height: 25px;
+    }
+
+    footer a {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 667px) and (orientation:landscape) {
+    header div.weather {
+        top: 8px;
+        right: 15px;
+    }
+
+    div.weather p {
+        font-size: 15px;
+    }
+
+    div.weather img {
+        width: 60%;
+    }
+}
+
+@media (min-width: 667px) and (orientation:landscape) {
+    header div.weather {
+        top: 10px;
+    }
+
+    footer button {
+        width: 30px;
+        height: 30px
+    }
+
+    footer a {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 768px) and (orientation:portrait) {
+    header h1 {
+        font-size: 70px;
+    }
+
+    header .fa-suitcase {
+        font-size: 75px;
+        right: -18px;
+        top: 5px;
+    }
+
+    header div.weather {
+        top: 35px;
+        right: 25px;
+        left: auto;
+    }
+
+    div.weather p {
+        font-size: 35px;
+    }
+
+    div.weather img {
+        width: 120%;
+    }
+
+    .application {
+        height: 40%;
+        margin: 10px 10px;
+        font-size: 25px;
+    }
+
+    .application .icon {
+        font-size: 85px;
+        margin-bottom: 10px;
+    }
+
+    footer button {
+        width: 45px;
+        height: 45px;
+    }
+
+    footer a {
+        font-size: 55px;
+    }
+}
+
+@media (min-width: 812px) and (orientation:portrait) {
+    header h1 {
+        font-size: 65px;
+    }
+
+    header .fa-suitcase {
+        font-size: 65px;
+        right: -18px;
+        top: 5px;
+    }
+
+    header div.weather {
+        top: 35px;
+        right: 25px;
+        left: auto;
+    }
+
+    div.weather p {
+        font-size: 30px;
+    }
+
+    div.weather img {
+        width: 75%;
+    }
+
+    .application {
+        height: 40%;
+        margin: 10px 10px;
+        font-size: 25px;
+    }
+
+    .application .icon {
+        font-size: 85px;
+        margin-bottom: 10px;
+    }
+
+    footer button {
+        width: 45px;
+        height: 45px;
+    }
+
+    footer a {
+        font-size: 55px;
+    }
+}
+
+@media (min-width: 1024px) and (orientation:portrait) {
+    header h1 {
+        font-size: 85px;
+    }
+
+    header .fa-suitcase {
+        font-size: 85px;
+        right: -18px;
+        top: 5px;
+    }
+
+    header div.weather {
+        top: 35px;
+        right: 25px;
+    }
+
+    div.weather p {
+        font-size: 50px;
+    }
+
+    div.weather img {
+        width: 100%;
+    }
+
+    .application {
+        font-size: 30px;
+    }
+
+    .application .icon {
+        font-size: 105px;
+        margin-bottom: 10px;
+    }
+
+    footer button {
+        width: 55px;
+        height: 55px;
+    }
+
+    footer a {
+        font-size: 75px;
+    }
+}
+
+@media (min-width: 1024px) and (orientation:landscape) {
+    header h1 {
+        font-size: 65px;
+    }
+
+    header .fa-suitcase {
+        font-size: 65px;
+        right: -18px;
+        top: 5px;
+    }
+
+    header div.weather {
+        top: 35px;
+        right: 25px;
+        left: auto;
+    }
+
+    div.weather p {
+        font-size: 30px;
+    }
+
+    div.weather img {
+        width: 75%;
+    }
+
+    .application {
+        height: 40%;
+        margin: 10px 10px;
+        font-size: 25px;
+    }
+
+    .application .icon {
+        font-size: 85px;
+        margin-bottom: 10px;
+    }
+
+    footer button {
+        width: 45px;
+        height: 45px;
+    }
+
+    footer a {
+        font-size: 55px;
+    }
+}
+
+@media (min-width: 1112px) and (orientation:landscape) {
+    header h1 {
+        font-size: 85px;
+    }
+
+    header .fa-suitcase {
+        font-size: 85px;
+    }
+
+    div.weather p {
+        font-size: 25px;
+    }
+
+    div.weather img {
+        width: 130%;
+    }
+
+    .application {
+        height: 300px;
+        margin: 10px 10px;
+        font-size: 25px;
+        flex-basis: 30%;
+    }
+
+    footer button {
+        width: 50px;
+        height: 50px;
+    }
+
+    footer a {
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 1180px) and (orientation:landscape) {
+    header h1 {
+        font-size: 80px;
+    }
+
+    header .fa-suitcase {
+        font-size: 80px;
+    }
+
+    header div.weather {
+        right: 40px;
+        top: 10px;
+    }
+
+    div.weather p {
+        font-size: 20px;
+    }
+
+    div.weather img {
+        width: 150%;
+    }
+
+    .application {
+        height: 40%;
+        margin: 5px 5px;
+        font-size: 20px;
+        flex-basis: 25%;
+    }
+
+    .application .icon {
+        font-size: 90px;
+    }
+
+    footer button {
+        width: 50px;
+        height: 50px;
+    }
+
+    footer a {
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 1920px) and (orientation:landscape) {
+
+    header div.weather {
+        top: 45px;
+        right: 55px;
+        left: auto;
+    }
+
+    div.weather p {
+        font-size: 30px;
+    }
+
+    div.weather img {
+        width: 150%;
+    }
+
+    .application .icon {
+        font-size: 120px;
+    }
+
+    footer button {
+        width: 60px;
+        height: 60px;
+    }
+
+    footer a {
+        font-size: 80px;
+    }
+}
