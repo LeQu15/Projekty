@@ -47,7 +47,7 @@ class Weather extends React.Component {
                 (result) => {
                     this.setState({
                         temp: result.days[0].hours[this.state.hour].temp + '\u2103',
-                        icon: "./img/" + result.days[0].hours[this.state.hour].icon+".png"
+                        icon: "./img/weather/" + result.days[0].hours[this.state.hour].icon+".png"
                     })
                 },
                 (error) => {
