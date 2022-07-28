@@ -1,0 +1,102 @@
+/*#appBox div#addTask {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 3% 0;
+}*/
+
+#appBox div#tasks {
+    margin: 0 auto;
+    margin-top: 3%;
+    height: 85%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto
+}
+
+div#tasks>div {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#tasks>div>div {
+    border-bottom: 2px solid rgb(182, 182, 182);
+    border-top: 2px solid rgb(182, 182, 182);
+    width: 100%;
+    font-size: 22px;
+    height: auto;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(238, 237, 237);
+    padding-left: 20px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+div#tasks>div>div>div {
+    word-wrap: break-word;
+    max-width: 80%;
+}
+
+div#tasks button {
+    background-color: white;
+    padding: 5px;
+    border: 2px solid black;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    transition: 0.1s linear;
+    cursor: pointer;
+}
+
+div#tasks button:hover {
+    background-color: rgb(52, 245, 52);
+    border: 2px solid rgb(13, 175, 54);
+}
+
+#addTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#addTask input {
+    border: 6px double black;
+    font-size: 30px;
+    padding: 5px;
+}
+#addTask button {
+    border: 6px double black;
+    margin-left: 1%;
+    padding: 5px;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+#addTask input:focus {
+    border: 6px solid black;
+}
+
+#addTask button:hover {
+    border: 6px solid black;
+}
+
+#addTask .error {
+    color: red;
+    flex-basis: 100%;
+    text-align: center;
+    font-weight: bold;
+}
