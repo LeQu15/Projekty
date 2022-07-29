@@ -1,6 +1,6 @@
 module.exports = [{
     icon: "fa-solid fa-calculator",
-    text: "Kalkulator"
+    text: "Calculator"
 }, {
     icon: "fa-solid fa-note-sticky",
     text: "Notepad"
@@ -9,11 +9,11 @@ module.exports = [{
     text: "ToDoList"
 }, {
     icon: "fa-solid fa-clock",
-    text: "Zegar"
+    text: "Clock"
 }, {
     icon: "fa-solid fa-paintbrush",
     text: "Paint"
 }, {
     icon: "fa-solid fa-earth-africa",
-    text: "Tłumacz"
+    text: "Translator"
 }]

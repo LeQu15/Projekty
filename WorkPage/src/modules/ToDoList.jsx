@@ -43,9 +43,9 @@ class ToDoList extends React.Component {
     return <div id="appBox">
         <div id="tasks"><div>{array}</div></div>
         <div id="addTask">
-            <p className="error" style={{display: this.state.error}}>Musisz wpisać wartość</p>
-            <input className="todolist" type="text" placeholder="Wpisz zadanie" value={this.state.task} onChange={this.handleTaskChange}></input>
-            <button onClick={this.addNewTask}>Dodaj</button>
+            <p className="error" style={{display: this.state.error}}>You need to enter the task</p>
+            <input className="todolist" type="text" placeholder="New Task" value={this.state.task} onChange={this.handleTaskChange}></input>
+            <button onClick={this.addNewTask}>Add</button>
         </div>
     </div>
     }

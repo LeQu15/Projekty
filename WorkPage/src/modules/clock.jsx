@@ -5,7 +5,7 @@ class Clock extends React.Component {
         super(props);
         this.state = {
             date: new Date(),
-            pause: 'Uruchom',
+            pause: 'Unpause',
             stoper: 0,
             alarm: '',
             alarmArray: [...this.props.clock.filter(elem => elem !=='')]
@@ -28,7 +28,7 @@ class Clock extends React.Component {
                 this.setState({
                     alarmArray: this.state.alarmArray.filter(item => item !== this.state.currentTime)
                 }, () => {this.props.get(this.state.alarmArray)})
-                window.alert(`Twój alarm został włączony ${this.state.currentTime}`)
+                window.alert(`Alarm: ${this.state.currentTime}`)
             }
         }, 100)
     }
@@ -39,9 +39,9 @@ class Clock extends React.Component {
     }
 
     handleStoper = () => {
-        if(this.state.pause === 'Uruchom') {
+        if(this.state.pause === 'Unpause') {
             this.setState({
-                pause: 'Zatrzymaj'
+                pause: 'Pause'
             })
             this.stoperInterval = window.setInterval(() => {
                 this.setState({
@@ -51,14 +51,14 @@ class Clock extends React.Component {
         } else {
             clearInterval(this.stoperInterval)
             this.setState({
-                pause: 'Uruchom'
+                pause: 'Unpause'
             })
         }
     }
 
     resetStoper = () => {
         this.setState({
-            pause: 'Uruchom',
+            pause: 'Pause',
             stoper: 0
         })
         clearInterval(this.stoperInterval)
@@ -84,16 +84,16 @@ class Clock extends React.Component {
             this.setState({
                 alarmArray: [...this.state.alarmArray, this.state.alarm]
             }, () => {this.props.get(this.state.alarmArray)})
-        } else window.alert('Musisz podać czas')
+        } else window.alert('You must enter the time')
     }
 
         render() {
             const array = this.state.alarmArray.sort().map((elem, index) => <div key={index}>
                 <div>Alarm: {elem}</div>
-                <button data-index={index} onClick={this.deleteAlarm}>Usuń</button>
+                <button data-index={index} onClick={this.deleteAlarm}>Remove</button>
             </div>)
     return <div id="appBox">
-        <div id="currentTime">Czas: 
+        <div id="currentTime">Time: 
             <p>{this.state.currentTime + ":" + this.state.seconds}</p>
         </div>
         <div id="stoper">
@@ -108,7 +108,7 @@ class Clock extends React.Component {
             <p>Alarm: </p>
             <div id="addAlarm">
                 <input type="time" id="appt" name="appt" min="00:00" max="23:00" value={this.state.alarm} onChange={this.handleChangeAlarm}/>
-                <button onClick={this.addAlarm}>Dodaj</button>
+                <button onClick={this.addAlarm}>Add</button>
             </div>
             <div id="alarms">{array.sort()}</div>
         </div>

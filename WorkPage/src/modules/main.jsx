@@ -96,7 +96,7 @@ setPaint = (data) => {
                 this.setState({
                     module: <Notepad get={this.setNotepad} text={this.state.noteText}/>
                 })
-            } else if(this.state.title==="Zegar") {
+            } else if(this.state.title==="Clock") {
                 this.setState({
                     module: <Clock get={this.setClock} clock={this.state.clockData}/>
                 })
