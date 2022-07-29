@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 if(!localStorage.notes) localStorage.setItem('notes', JSON.stringify(''))
 if(!localStorage.toDo) localStorage.setItem('toDo', JSON.stringify(['']))
 if(!localStorage.clock) localStorage.setItem('clock', JSON.stringify(['']))
+if(!localStorage.bgc) localStorage.setItem('bgc', JSON.stringify('#ffffff'))
+if(!localStorage.canvas) localStorage.setItem('canvas', JSON.stringify(''))
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(<App/>)

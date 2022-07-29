@@ -3,7 +3,6 @@ import React from 'react';
 class Clock extends React.Component {
     constructor(props){
         super(props);
-        console.log(this.props.clock)
         this.state = {
             date: new Date(),
             pause: 'Uruchom',
@@ -11,7 +10,6 @@ class Clock extends React.Component {
             alarm: '',
             alarmArray: [...this.props.clock.filter(elem => elem !=='')]
         };
-        console.log(this.props.clock, this.props.clock.filter(elem => elem !==''))
     }
 
     componentDidMount = () => {

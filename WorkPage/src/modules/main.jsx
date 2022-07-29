@@ -3,6 +3,7 @@ import {Location} from './weather.jsx'
 import ToDoList from './ToDoList.jsx';
 import Notepad from './notepad.jsx'
 import Clock from './clock.jsx'
+import Paint from'./paint.jsx'
 
 class Main extends React.Component {
     constructor(props) {
@@ -16,7 +17,9 @@ class Main extends React.Component {
             display: 'none',
             noteText: JSON.parse(localStorage.notes),
             toDoText: [...JSON.parse(localStorage.toDo)],
-            clockData: [...JSON.parse(localStorage.clock)]
+            clockData: [...JSON.parse(localStorage.clock)],
+            bgc: JSON.parse(localStorage.bgc),
+            canvas: JSON.parse(localStorage.canvas),
         }
     }
 
@@ -53,6 +56,19 @@ setClock = (data) => {
 })
 }
 
+setPaint = (data) => {
+    this.setState({
+        bgc: data.bgc,
+        canvas: data.canvas
+    }, () => {
+    localStorage.setItem('bgc', JSON.stringify(this.state.bgc))
+    localStorage.setItem('canvas', JSON.stringify(this.state.canvas))
+    this.setState({
+        module: <Paint get={this.setPaint} bgc={this.state.bgc} canvas={this.state.canvas}/>
+    })
+})
+}
+
     close=()=>{
         this.setState({
             opacity: 0,
@@ -81,9 +97,12 @@ setClock = (data) => {
                     module: <Notepad get={this.setNotepad} text={this.state.noteText}/>
                 })
             } else if(this.state.title==="Zegar") {
-                console.log("ok")
                 this.setState({
                     module: <Clock get={this.setClock} clock={this.state.clockData}/>
+                })
+            } else if(this.state.title==="Paint") {
+                this.setState({
+                    module: <Paint get={this.setPaint} bgc={this.state.bgc} canvas={this.state.canvas}/>
                 })
             } else {
                 this.setState({
